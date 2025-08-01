@@ -27,6 +27,39 @@
             color: #c9d1d9;
             overflow-x: hidden;
         }
+        
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0d1117;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader-content {
+            text-align: left;
+            font-size: 1em;
+            color: #39ff14;
+        }
+        .loader-line {
+            display: block;
+            margin-bottom: 0.5em;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
 
         /* Terminal-like green color */
         .text-green-glow {
@@ -185,6 +218,18 @@
 </head>
 <body class="antialiased">
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <span class="loader-line" style="animation-delay: 0s;">> Booting system...</span>
+            <span class="loader-line" style="animation-delay: 0.5s;">> Loading kernel modules... [OK]</span>
+            <span class="loader-line" style="animation-delay: 1s;">> Initializing network interface... [OK]</span>
+            <span class="loader-line" style="animation-delay: 1.5s;">> Mounting file systems... [OK]</span>
+            <span class="loader-line" style="animation-delay: 2s;">> Establishing secure connection...</span>
+            <span class="loader-line" style="animation-delay: 2.5s;">> Welcome, Bablu.</span>
+        </div>
+    </div>
+
     <div class="parallax-bg"></div>
 
     <!-- Main Container -->
@@ -268,7 +313,7 @@
         
         <!-- Work & Projects Section -->
         <section id="projects" class="py-20 md:py-32">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow parallax-section" data-parallax-speed="0.25">WORK & PROJECTS</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow animate-on-scroll slide-in-up">WORK & PROJECTS</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="terminal-window animate-on-scroll slide-in-left">
@@ -307,7 +352,7 @@
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Professional Training -->
                 <div class="w-full animate-on-scroll slide-in-left">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow parallax-section" data-parallax-speed="0.2">PROFESSIONAL TRAINING</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">PROFESSIONAL TRAINING</h2>
                     <div class="space-y-8">
                         <div class="terminal-window">
                            <div class="p-6">
@@ -327,7 +372,7 @@
                 </div>
                 <!-- Education -->
                 <div class="w-full animate-on-scroll slide-in-right">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow parallax-section" data-parallax-speed="0.2">EDUCATION</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">EDUCATION</h2>
                      <div class="terminal-window">
                            <div class="p-6">
                                 <h3 class="text-xl font-bold">GREEN VIEW HIGH SCHOOL</h3>
@@ -384,6 +429,20 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Preloader logic
+            const preloader = document.getElementById('preloader');
+            const minLoaderTime = 3000; // 3 seconds
+            const pageLoadTime = Date.now();
+
+            window.addEventListener('load', () => {
+                const timePassed = Date.now() - pageLoadTime;
+                const delay = Math.max(0, minLoaderTime - timePassed);
+                
+                setTimeout(() => {
+                    preloader.classList.add('hidden');
+                }, delay);
+            });
+
             // Typing Animation
             var typedOptions = {
                 strings: ['an Ethical Hacker.', 'a Pentester.', 'a Digital Marketer.', 'a Facebook Ads Expert.'],
