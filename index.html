@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         /* Custom styles for the hacker theme */
         body {
@@ -26,6 +29,47 @@
         .text-green-glow {
             color: #39ff14;
             text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
+        }
+        
+        .icon-glow {
+            color: #39ff14;
+            filter: drop-shadow(0 0 4px #39ff14);
+            transition: all 0.3s ease;
+        }
+        .icon-glow:hover {
+            filter: drop-shadow(0 0 8px #39ff14);
+            transform: scale(1.1);
+        }
+
+        /* Hero Section Video Background */
+        #hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2;
+        }
+        #hero-video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(13, 17, 23, 0.85); /* Darker overlay */
+            z-index: -1;
         }
 
         /* Blinking cursor for the typing animation */
@@ -110,7 +154,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: -3; /* Behind video overlay */
             background-image: radial-gradient(#161b22 1px, transparent 1px);
             background-size: 20px 20px;
             opacity: 0.3;
@@ -119,21 +163,28 @@
 </head>
 <body class="antialiased">
 
-    <!-- Parallax background grid -->
     <div class="parallax-bg"></div>
 
     <!-- Main Container -->
     <div class="container mx-auto px-4 md:px-8 lg:px-16 relative">
 
         <!-- Hero Section -->
-        <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
-            <div class="w-full max-w-4xl">
+        <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center relative">
+            <div id="hero-video-container">
+                <video autoplay loop muted playsinline id="hero-video" poster="https://placehold.co/1920x1080/0d1117/0d1117?text=Loading...">
+                    <!-- Royalty-free video from Pixabay -->
+                    <source src="https://cdn.pixabay.com/video/2022/05/23/116243-713312039_large.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <div class="w-full max-w-4xl z-10">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-green-glow mb-4">MD Khairul Islam Bablu</h1>
                 <p class="text-xl md:text-2xl lg:text-3xl font-light">
                     <span id="typing-effect"></span>
                 </p>
             </div>
-            <div class="absolute bottom-10 animate-bounce">
+            <div class="absolute bottom-10 animate-bounce z-10">
                 <a href="#profile" class="text-green-glow text-2xl">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -153,7 +204,7 @@
                     <div class="flex flex-col md:flex-row items-center gap-8">
                         <!-- Profile Picture -->
                         <div class="flex-shrink-0 mb-6 md:mb-0">
-                            <img src="https://i.ibb.co/Y4DPwn22/download-4-1.png" 
+                            <img src="https://placehold.co/200x200/010409/39ff14?text=Bablu" 
                                  alt="MD Khairul Islam Bablu" 
                                  class="profile-picture w-40 h-40 md:w-48 md:h-48">
                         </div>
@@ -161,7 +212,7 @@
                         <div>
                             <h2 class="text-2xl md:text-3xl font-bold mb-4">PROFILE</h2>
                             <p class="text-base md:text-lg leading-relaxed">
-                                Ethical hacker, pentester, and red teamer with over 2 years of hands-on experience in identifying and exploiting system vulnerabilities. Proven ability to implement security measures that prevent breaches, significantly enhancing system protection against malware and various cyber threats. Also a professional digital marketer and Facebook ads expert, skilled in growing businesses by targeting audiences and scaling sales. Passionate about maintaining the highest ethical standards and ensuring data security in today’s complex digital landscape.
+                                Ethical hacker, pentester, and red teamer with over 2 years of hands-on experience. Proven ability to implement security measures that prevent breaches, significantly enhancing system protection. As a professional digital marketer and Facebook Ads expert, I excel at tracking business website performance, precisely targeting audiences, and scaling sales to grow your business. Passionate about maintaining the highest ethical standards and ensuring data security in today’s complex digital landscape.
                             </p>
                         </div>
                     </div>
@@ -178,15 +229,15 @@
                 <div class="p-6 md:p-8">
                     <p class="text-green-glow mb-2">$ ls -l /skills</p>
                     <h2 class="text-2xl md:text-3xl font-bold mb-6">SKILLS</h2>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-sm md:text-base">
-                        <span class="flex items-center"><span class="text-green-glow mr-2">&gt;</span>Ethical Hacking</span>
-                        <span class="flex items-center"><span class="text-green-glow mr-2">&gt;</span>Penetration Testing</span>
-                        <span class="flex items-center"><span class="text-green-glow mr-2">&gt;</span>Digital Marketing</span>
-                        <span class="flex items-center"><span class="text-green-glow mr-2">&gt;</span>Facebook Ads Expert</span>
-                        <span class="flex items-center"><span class="text-green-glow mr-2">&gt;</span>VAPT & Report Writing</span>
-                        <span class="flex items-center"><span class="text-green-glow mr-2">&gt;</span>Vulnerability Research</span>
-                        <span class="flex items-center"><span class="text-green-glow mr-2">&gt;</span>Computer Networking</span>
-                        <span class="flex items-center"><span class="text-green-glow mr-2">&gt;</span>Teamwork</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm md:text-base">
+                        <span class="flex items-center"><i class="fas fa-user-secret icon-glow w-6 text-center mr-2"></i>Ethical Hacking</span>
+                        <span class="flex items-center"><i class="fas fa-bug-slash icon-glow w-6 text-center mr-2"></i>Penetration Testing</span>
+                        <span class="flex items-center"><i class="fas fa-chart-line icon-glow w-6 text-center mr-2"></i>Digital Marketing</span>
+                        <span class="flex items-center"><i class="fab fa-facebook icon-glow w-6 text-center mr-2"></i>Facebook Ads Expert</span>
+                        <span class="flex items-center"><i class="fas fa-clipboard-check icon-glow w-6 text-center mr-2"></i>VAPT & Report Writing</span>
+                        <span class="flex items-center"><i class="fas fa-search-plus icon-glow w-6 text-center mr-2"></i>Vulnerability Research</span>
+                        <span class="flex items-center"><i class="fas fa-network-wired icon-glow w-6 text-center mr-2"></i>Computer Networking</span>
+                        <span class="flex items-center"><i class="fas fa-users icon-glow w-6 text-center mr-2"></i>Teamwork</span>
                     </div>
                 </div>
             </div>
@@ -287,13 +338,13 @@
         <!-- Contact Section -->
         <section id="contact" class="py-20 md:py-32 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4 text-green-glow">INITIATE CONTACT</h2>
-            <p class="max-w-2xl mx-auto mb-8">Have a project, a question, or just want to connect? Send a signal.</p>
-            <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-                <a href="mailto:m.babluislambiever@gmail.com" class="text-lg hover:text-green-glow transition-colors">m.babluislambiever@gmail.com</a>
-                <span class="hidden md:block">|</span>
-                <a href="tel:+8801624224364" class="text-lg hover:text-green-glow transition-colors">+880 1624-224364</a>
-                <span class="hidden md:block">|</span>
-                <a href="https://github.com/bablu-islam" target="_blank" class="text-lg hover:text-green-glow transition-colors">github.com/bablu-islam</a>
+            <p class="max-w-2xl mx-auto mb-10">Have a project, a question, or just want to connect? Send a signal.</p>
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                <a href="mailto:m.babluislambiever@gmail.com" class="icon-glow text-4xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/8801624224364" target="_blank" class="icon-glow text-4xl" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://github.com/bablu-islam" target="_blank" class="icon-glow text-4xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" class="icon-glow text-4xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" class="icon-glow text-4xl" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
             </div>
         </section>
 
@@ -345,7 +396,7 @@
         });
 
         // Add a class to hide elements initially and apply fade-in
-        const elementsToAnimate = document.querySelectorAll('.terminal-window, .parallax-section h2, .grid > div');
+        const elementsToAnimate = document.querySelectorAll('.terminal-window, .parallax-section h2, .grid > div, #contact > div > a');
         elementsToAnimate.forEach(el => {
             el.classList.add('fade-in-hidden');
             observer.observe(el);
