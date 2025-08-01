@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Khairul Islam Bablu | Ethical Hacker & Digital Marketer</title>
     
+    <!-- Custom Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230d1117'/%3E%3Ctext x='10' y='75' font-family='monospace' font-size='60' fill='%2339ff14' style='text-shadow:0 0 5px %2339ff14;'%3E&gt;_&lt;/text&gt;%3C/svg%3E">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -94,8 +97,8 @@
         }
         
         .terminal-window:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px #39ff1430;
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 25px #39ff1440;
         }
 
         .terminal-header {
@@ -147,7 +150,7 @@
             background: #2aa810;
         }
 
-        /* Parallax background effect */
+        /* Animated Parallax background effect */
         .parallax-bg {
             position: fixed;
             top: 0;
@@ -155,9 +158,28 @@
             width: 100%;
             height: 100%;
             z-index: -3; /* Behind video overlay */
-            background-image: radial-gradient(#161b22 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.3;
+            background-image: radial-gradient(#161b22 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+            opacity: 0.2;
+            animation: move-grid 20s linear infinite;
+        }
+        @keyframes move-grid {
+            from { background-position: 0 0; }
+            to { background-position: 50px 50px; }
+        }
+
+        /* Animation classes for scroll effects */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .slide-in-left { transform: translateX(-50px); }
+        .slide-in-right { transform: translateX(50px); }
+        .slide-in-up { transform: translateY(50px); }
+        
+        .is-visible {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
         }
     </style>
 </head>
@@ -171,9 +193,9 @@
         <!-- Hero Section -->
         <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center relative">
             <div id="hero-video-container">
+                <!-- IMPORTANT: Place your video file in a 'videos' folder next to your HTML file -->
                 <video autoplay loop muted playsinline id="hero-video" poster="https://placehold.co/1920x1080/0d1117/0d1117?text=Loading...">
-                    <!-- Royalty-free video from Pixabay -->
-                    <source src="https://drive.google.com/file/d/1KA10_s6m5NQuMoq14iVvfoAQrwy8bHTm/view?usp=drive_link" type="video/mp4">
+                    <source src="videos/background.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-overlay"></div>
@@ -194,8 +216,8 @@
         </header>
 
         <!-- Profile Section -->
-        <section id="profile" class="py-20 md:py-32 parallax-section">
-            <div class="terminal-window max-w-5xl mx-auto">
+        <section id="profile" class="py-20 md:py-32 parallax-section" data-parallax-speed="0.1">
+            <div class="terminal-window max-w-5xl mx-auto animate-on-scroll slide-in-up">
                 <div class="terminal-header">
                     <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
                 </div>
@@ -204,6 +226,7 @@
                     <div class="flex flex-col md:flex-row items-center gap-8">
                         <!-- Profile Picture -->
                         <div class="flex-shrink-0 mb-6 md:mb-0">
+                            <!-- IMPORTANT: Replace this placeholder with the path to your actual profile picture -->
                             <img src="https://i.ibb.co/Y4DPwn22/download-4-1.png" 
                                  alt="MD Khairul Islam Bablu" 
                                  class="profile-picture w-40 h-40 md:w-48 md:h-48">
@@ -221,8 +244,8 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-32 parallax-section">
-            <div class="terminal-window max-w-4xl mx-auto">
+        <section id="skills" class="py-20 md:py-32 parallax-section" data-parallax-speed="0.15">
+            <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
                 <div class="terminal-header">
                     <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
                 </div>
@@ -244,11 +267,11 @@
         </section>
         
         <!-- Work & Projects Section -->
-        <section id="projects" class="py-20 md:py-32 parallax-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">WORK & PROJECTS</h2>
+        <section id="projects" class="py-20 md:py-32">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow parallax-section" data-parallax-speed="0.25">WORK & PROJECTS</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="terminal-window">
+                <div class="terminal-window animate-on-scroll slide-in-left">
                     <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Gin & Juice Shop</h3>
@@ -257,7 +280,7 @@
                     </div>
                 </div>
                 <!-- Project 2 -->
-                <div class="terminal-window">
+                <div class="terminal-window animate-on-scroll slide-in-up">
                     <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">SecureBank Application</h3>
@@ -266,7 +289,7 @@
                     </div>
                 </div>
                 <!-- Project 3 -->
-                <div class="terminal-window">
+                <div class="terminal-window animate-on-scroll slide-in-right">
                     <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">WebSec Tool Dev</h3>
@@ -280,11 +303,11 @@
         </section>
 
         <!-- Experience & Education Section -->
-        <section id="experience" class="py-20 md:py-32 parallax-section">
+        <section id="experience" class="py-20 md:py-32">
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Professional Training -->
-                <div class="w-full">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">PROFESSIONAL TRAINING</h2>
+                <div class="w-full animate-on-scroll slide-in-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow parallax-section" data-parallax-speed="0.2">PROFESSIONAL TRAINING</h2>
                     <div class="space-y-8">
                         <div class="terminal-window">
                            <div class="p-6">
@@ -303,8 +326,8 @@
                     </div>
                 </div>
                 <!-- Education -->
-                <div class="w-full">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">EDUCATION</h2>
+                <div class="w-full animate-on-scroll slide-in-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow parallax-section" data-parallax-speed="0.2">EDUCATION</h2>
                      <div class="terminal-window">
                            <div class="p-6">
                                 <h3 class="text-xl font-bold">GREEN VIEW HIGH SCHOOL</h3>
@@ -317,8 +340,8 @@
         </section>
         
         <!-- Certifications -->
-        <section id="certs" class="py-20 md:py-32 parallax-section">
-            <div class="terminal-window max-w-4xl mx-auto">
+        <section id="certs" class="py-20 md:py-32 parallax-section" data-parallax-speed="0.1">
+            <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="p-6 md:p-8">
                     <p class="text-green-glow mb-2">$ grep -r "CERTIFIED" /var/log/auth.log</p>
@@ -337,14 +360,15 @@
 
         <!-- Contact Section -->
         <section id="contact" class="py-20 md:py-32 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-green-glow">INITIATE CONTACT</h2>
-            <p class="max-w-2xl mx-auto mb-10">Have a project, a question, or just want to connect? Send a signal.</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-green-glow animate-on-scroll slide-in-up">INITIATE CONTACT</h2>
+            <p class="max-w-2xl mx-auto mb-10 animate-on-scroll slide-in-up" style="transition-delay: 100ms;">Have a project, a question, or just want to connect? Send a signal.</p>
             <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-                <a href="mailto:m.babluislambiever@gmail.com" class="icon-glow text-4xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://wa.me/8801624224364" target="_blank" class="icon-glow text-4xl" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://github.com/babluroot" target="_blank" class="icon-glow text-4xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.facebook.com/babluislambieverofficial" target="_blank" class="icon-glow text-4xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://x.com/BabluislamB?t=BoTY8hfrFqozTKgM7Ozqhg&s=08" target="_blank" class="icon-glow text-4xl" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="mailto:m.babluislambiever@gmail.com" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 200ms;" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/8801624224364" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 300ms;" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://github.com/bablu-islam" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 400ms;" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <!-- IMPORTANT: Add your actual profile links here -->
+                <a href="#" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 500ms;" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 600ms;" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
             </div>
         </section>
 
@@ -359,9 +383,9 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <script>
-        // Typing Animation
         document.addEventListener('DOMContentLoaded', function() {
-            var options = {
+            // Typing Animation
+            var typedOptions = {
                 strings: ['an Ethical Hacker.', 'a Pentester.', 'a Digital Marketer.', 'a Facebook Ads Expert.'],
                 typeSpeed: 50,
                 backSpeed: 25,
@@ -371,49 +395,35 @@
                 showCursor: true,
                 cursorChar: '_',
             };
-            var typed = new Typed('#typing-effect', options);
-        });
+            var typed = new Typed('#typing-effect', typedOptions);
 
-        // Simple Parallax Effect on scroll
-        const parallaxSections = document.querySelectorAll('.parallax-section');
-        window.addEventListener('scroll', function() {
-            let offset = window.pageYOffset;
-            parallaxSections.forEach(section => {
-                // The 'speed' can be adjusted by changing the divisor
-                section.style.transform = 'translateY(' + offset * -0.1 + 'px)';
-            });
-        });
-        
-        // Fade-in animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-visible');
-                }
-            });
-        }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
-        });
+            // Enhanced Parallax & Scroll Animations
+            const parallaxElements = document.querySelectorAll('.parallax-section');
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
-        // Add a class to hide elements initially and apply fade-in
-        const elementsToAnimate = document.querySelectorAll('.terminal-window, .parallax-section h2, .grid > div, #contact > div > a');
-        elementsToAnimate.forEach(el => {
-            el.classList.add('fade-in-hidden');
-            observer.observe(el);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            window.addEventListener('scroll', function() {
+                let offset = window.pageYOffset;
+                parallaxElements.forEach(el => {
+                    let speed = parseFloat(el.dataset.parallaxSpeed) || 0.1;
+                    el.style.transform = 'translateY(' + offset * -speed + 'px)';
+                });
+            });
         });
     </script>
-    
-    <style>
-        .fade-in-hidden {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 
 </body>
 </html>
