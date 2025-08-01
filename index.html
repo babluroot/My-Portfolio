@@ -189,7 +189,7 @@
         }
         
         .hero-title {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2rem, 8vw, 4.5rem);
             line-height: 1.1;
             margin-bottom: 1.5rem;
             color: white;
@@ -197,7 +197,7 @@
         }
         
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-size: clamp(1rem, 3vw, 1.6rem);
             margin-bottom: 2rem;
             color: white;
             animation: fadeInUp 1s ease-out 0.2s;
@@ -248,8 +248,8 @@
         }
         
         .hero-image {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             object-fit: cover;
             border: 8px solid white;
@@ -271,6 +271,7 @@
             display: inline-block;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            text-decoration: none;
         }
         
         .btn-primary:hover {
@@ -287,6 +288,7 @@
             font-weight: 600;
             display: inline-block;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
         
         .btn-outline:hover {
@@ -297,13 +299,13 @@
         
         /* Section Styles */
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
             background-color: white;
         }
         
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1rem;
             position: relative;
@@ -506,6 +508,8 @@
             justify-content: center;
             margin-right: 10px;
             transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
         }
         
         .social-icon:hover {
@@ -531,25 +535,6 @@
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--secondary-blue);
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 100px 0 50px;
-            }
-            
-            .hero-image {
-                width: 250px;
-                height: 250px;
-                margin-top: 30px;
-            }
-            
-            .section {
-                padding: 70px 0;
-            }
         }
         
         /* Very Cool Animated Loader */
@@ -741,11 +726,6 @@
             transform: translateY(-5px);
         }
         
-        /* SEO Elements */
-        .schema-markup {
-            display: none;
-        }
-        
         /* Blog Section Styles */
         .blog-card {
             background: white;
@@ -800,6 +780,7 @@
             display: inline-flex;
             align-items: center;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
         
         .read-more:hover {
@@ -858,6 +839,123 @@
             z-index: -1;
             will-change: transform;
         }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero {
+                padding: 100px 0 50px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.8rem, 6vw, 3.5rem);
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 80px 0 40px;
+            }
+            
+            .hero-image {
+                width: 200px;
+                height: 200px;
+                margin-top: 30px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .timeline-dot {
+                left: -24px;
+                width: 12px;
+                height: 12px;
+            }
+            
+            .project-card, .cert-card, .blog-card {
+                margin-bottom: 20px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            footer {
+                padding: 40px 0 20px;
+            }
+            
+            footer .flex {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            footer .mb-6 {
+                margin-bottom: 20px;
+            }
+            
+            footer .flex.space-x-6 {
+                margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.8rem, 2vw, 1.2rem);
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .hero-image {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .project-card, .cert-card, .blog-card {
+                padding: 20px;
+            }
+            
+            .contact-form {
+                padding: 20px 15px;
+            }
+            
+            .form-control {
+                padding: 12px;
+            }
+            
+            .btn-primary, .btn-outline {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -904,31 +1002,31 @@
     <div class="parallax-element parallax-medium" style="width: 180px; height: 180px; top: 20%; left: 50%;"></div>
     <!-- Navigation -->
     <nav class="fixed w-full z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold gradient-text">MD Khairul Islam Bablu</a>
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl sm:text-2xl font-bold gradient-text">MD Khairul Islam Bablu</a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#blog" class="nav-link">Blog</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <div class="hidden md:flex space-x-4 lg:space-x-8">
+                <a href="#home" class="nav-link text-sm lg:text-base">Home</a>
+                <a href="#about" class="nav-link text-sm lg:text-base">About</a>
+                <a href="#skills" class="nav-link text-sm lg:text-base">Skills</a>
+                <a href="#experience" class="nav-link text-sm lg:text-base">Experience</a>
+                <a href="#services" class="nav-link text-sm lg:text-base">Services</a>
+                <a href="#projects" class="nav-link text-sm lg:text-base">Projects</a>
+                <a href="#blog" class="nav-link text-sm lg:text-base">Blog</a>
+                <a href="#contact" class="nav-link text-sm lg:text-base">Contact</a>
             </div>
             
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
+                    <i class="fas fa-bars text-xl sm:text-2xl"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4 shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-4 shadow-lg">
             <a href="#home" class="block py-2 text-gray-700">Home</a>
             <a href="#about" class="block py-2 text-gray-700">About</a>
             <a href="#skills" class="block py-2 text-gray-700">Skills</a>
@@ -941,13 +1039,13 @@
     </nav>
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="hero-content md:w-1/2 mb-10 md:mb-0">
+        <div class="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center">
+            <div class="hero-content md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
                 <h1 class="hero-title">Hi, I am</h1>
                 <div class="hero-subtitle typing-container">
                     <span class="typed-text"></span>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
                     <a href="#services" class="btn-primary">My Services</a>
                     <a href="#contact" class="btn-outline">Get In Touch</a>
                 </div>
@@ -960,20 +1058,20 @@
     </section>
     <!-- About Section -->
     <section id="about" class="section">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">About Me</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">MD Khairul Islam Bablu - Ethical Hacker, Pentester, Digital Marketing Specialist, and SEO Expert with over 2 years of hands-on experience</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">MD Khairul Islam Bablu - Ethical Hacker, Pentester, Digital Marketing Specialist, and SEO Expert with over 2 years of hands-on experience</p>
             </div>
             
-            <div class="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
-                <p class="text-gray-600 mb-4">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+                <p class="text-gray-600 mb-4 text-sm sm:text-base">
                     I have a proven ability to implement security measures that prevent breaches, significantly enhancing system protection against malware and various cyber threats. Additionally, I specialize in digital marketing strategies that boost online visibility and drive business growth.
                 </p>
-                <p class="text-gray-600 mb-4">
+                <p class="text-gray-600 mb-4 text-sm sm:text-base">
                     My expertise spans two critical domains: cybersecurity and digital marketing. In cybersecurity, I identify vulnerabilities in systems, networks, and applications, followed by providing actionable recommendations to strengthen security postures. In digital marketing, I create comprehensive strategies that include Facebook marketing, SEO optimization, and content marketing to help businesses reach their target audience effectively.
                 </p>
-                <p class="text-gray-600">
+                <p class="text-gray-600 text-sm sm:text-base">
                     I'm passionate about maintaining the highest ethical standards in both cybersecurity and digital marketing, ensuring data protection while helping businesses grow their online presence in today's complex digital landscape.
                 </p>
                 
@@ -983,8 +1081,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold">Location</h4>
-                            <p class="text-gray-600">Savar, Dhaka, Bangladesh</p>
+                            <h4 class="font-semibold text-sm sm:text-base">Location</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">Savar, Dhaka, Bangladesh</p>
                         </div>
                     </div>
                     
@@ -993,8 +1091,8 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold">Email</h4>
-                            <p class="text-gray-600">m.babluislambiever@gmail.com</p>
+                            <h4 class="font-semibold text-sm sm:text-base">Email</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">m.babluislambiever@gmail.com</p>
                         </div>
                     </div>
                     
@@ -1003,8 +1101,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold">Phone</h4>
-                            <p class="text-gray-600">+880 1624-224364</p>
+                            <h4 class="font-semibold text-sm sm:text-base">Phone</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">+880 1624-224364</p>
                         </div>
                     </div>
                     
@@ -1013,8 +1111,8 @@
                             <i class="fas fa-language"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold">Languages</h4>
-                            <p class="text-gray-600">English, Bangla, Hindi, Urdu</p>
+                            <h4 class="font-semibold text-sm sm:text-base">Languages</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">English, Bangla, Hindi, Urdu</p>
                         </div>
                     </div>
                 </div>
@@ -1023,21 +1121,21 @@
     </section>
     <!-- Skills Section -->
     <section id="skills" class="section bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">My Skills</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Technical expertise in cybersecurity, digital marketing, and SEO</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">Technical expertise in cybersecurity, digital marketing, and SEO</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
                 <div>
                     <h3 class="text-xl font-semibold mb-6 text-center">Cybersecurity Skills</h3>
                     
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Ethical Hacking</span>
-                                <span>95%</span>
+                                <span class="font-medium text-sm sm:text-base">Ethical Hacking</span>
+                                <span class="text-sm sm:text-base">95%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="95%"></div>
@@ -1046,8 +1144,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Penetration Testing</span>
-                                <span>90%</span>
+                                <span class="font-medium text-sm sm:text-base">Penetration Testing</span>
+                                <span class="text-sm sm:text-base">90%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="90%"></div>
@@ -1056,8 +1154,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">VAPT & Report Writing</span>
-                                <span>85%</span>
+                                <span class="font-medium text-sm sm:text-base">VAPT & Report Writing</span>
+                                <span class="text-sm sm:text-base">85%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="85%"></div>
@@ -1066,8 +1164,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Vulnerability Researching</span>
-                                <span>88%</span>
+                                <span class="font-medium text-sm sm:text-base">Vulnerability Researching</span>
+                                <span class="text-sm sm:text-base">88%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="88%"></div>
@@ -1076,8 +1174,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Computer Networking</span>
-                                <span>82%</span>
+                                <span class="font-medium text-sm sm:text-base">Computer Networking</span>
+                                <span class="text-sm sm:text-base">82%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="82%"></div>
@@ -1092,8 +1190,8 @@
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Facebook Marketing</span>
-                                <span>92%</span>
+                                <span class="font-medium text-sm sm:text-base">Facebook Marketing</span>
+                                <span class="text-sm sm:text-base">92%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="92%"></div>
@@ -1102,8 +1200,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">SEO Optimization</span>
-                                <span>90%</span>
+                                <span class="font-medium text-sm sm:text-base">SEO Optimization</span>
+                                <span class="text-sm sm:text-base">90%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="90%"></div>
@@ -1112,8 +1210,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Content Marketing</span>
-                                <span>85%</span>
+                                <span class="font-medium text-sm sm:text-base">Content Marketing</span>
+                                <span class="text-sm sm:text-base">85%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="85%"></div>
@@ -1122,8 +1220,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Social Media Management</span>
-                                <span>88%</span>
+                                <span class="font-medium text-sm sm:text-base">Social Media Management</span>
+                                <span class="text-sm sm:text-base">88%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="88%"></div>
@@ -1132,8 +1230,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">PPC Advertising</span>
-                                <span>80%</span>
+                                <span class="font-medium text-sm sm:text-base">PPC Advertising</span>
+                                <span class="text-sm sm:text-base">80%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="80%"></div>
@@ -1148,8 +1246,8 @@
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Effective Communication</span>
-                                <span>90%</span>
+                                <span class="font-medium text-sm sm:text-base">Effective Communication</span>
+                                <span class="text-sm sm:text-base">90%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="90%"></div>
@@ -1158,8 +1256,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Teamwork</span>
-                                <span>92%</span>
+                                <span class="font-medium text-sm sm:text-base">Teamwork</span>
+                                <span class="text-sm sm:text-base">92%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="92%"></div>
@@ -1168,8 +1266,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Problem Solving</span>
-                                <span>95%</span>
+                                <span class="font-medium text-sm sm:text-base">Problem Solving</span>
+                                <span class="text-sm sm:text-base">95%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="95%"></div>
@@ -1178,8 +1276,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Critical Thinking</span>
-                                <span>93%</span>
+                                <span class="font-medium text-sm sm:text-base">Critical Thinking</span>
+                                <span class="text-sm sm:text-base">93%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="93%"></div>
@@ -1188,8 +1286,8 @@
                         
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium">Adaptability</span>
-                                <span>87%</span>
+                                <span class="font-medium text-sm sm:text-base">Adaptability</span>
+                                <span class="text-sm sm:text-base">87%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="87%"></div>
@@ -1202,10 +1300,10 @@
     </section>
     <!-- Experience Section -->
     <section id="experience" class="section">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">Education & Experience</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">My academic background and professional training</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">My academic background and professional training</p>
             </div>
             
             <div class="max-w-4xl mx-auto">
@@ -1213,42 +1311,42 @@
                     <div class="timeline-item fade-in">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">2011 - 2022</div>
-                            <h3 class="text-xl font-semibold mb-2">GREEN VIEW HIGH SCHOOL</h3>
-                            <p class="text-gray-600">Department of Science</p>
-                            <p class="text-gray-600">GPA: 3.8 / 5.0</p>
+                            <div class="timeline-date text-sm sm:text-base">2011 - 2022</div>
+                            <h3 class="text-lg sm:text-xl font-semibold mb-2">GREEN VIEW HIGH SCHOOL</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Department of Science</p>
+                            <p class="text-gray-600 text-sm sm:text-base">GPA: 3.8 / 5.0</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item fade-in">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">2022 - 2023</div>
-                            <h3 class="text-xl font-semibold mb-2">Creative IT Institute</h3>
-                            <p class="text-gray-600">Advanced training in Ethical Hacking, Penetration Testing, and Network Security</p>
-                            <p class="text-gray-600">Hands-on experience with Nmap, Metasploit, Burpsuit, and more</p>
-                            <p class="text-gray-600">Specialized in network hacking and vulnerability assessment</p>
+                            <div class="timeline-date text-sm sm:text-base">2022 - 2023</div>
+                            <h3 class="text-lg sm:text-xl font-semibold mb-2">Creative IT Institute</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Advanced training in Ethical Hacking, Penetration Testing, and Network Security</p>
+                            <p class="text-gray-600 text-sm sm:text-base">Hands-on experience with Nmap, Metasploit, Burpsuit, and more</p>
+                            <p class="text-gray-600 text-sm sm:text-base">Specialized in network hacking and vulnerability assessment</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item fade-in">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">2023 - 2024</div>
-                            <h3 class="text-xl font-semibold mb-2">Cisco Networking Academy</h3>
-                            <p class="text-gray-600">Advanced training in Ethical Hacking, Penetration Testing, and Network Security with Cisco</p>
-                            <p class="text-gray-600">Practical experience in network hacking, vulnerability assessment, and real-world simulations</p>
+                            <div class="timeline-date text-sm sm:text-base">2023 - 2024</div>
+                            <h3 class="text-lg sm:text-xl font-semibold mb-2">Cisco Networking Academy</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Advanced training in Ethical Hacking, Penetration Testing, and Network Security with Cisco</p>
+                            <p class="text-gray-600 text-sm sm:text-base">Practical experience in network hacking, vulnerability assessment, and real-world simulations</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item fade-in">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <div class="timeline-date">2022 - Present</div>
-                            <h3 class="text-xl font-semibold mb-2">Digital Marketing Specialist</h3>
-                            <p class="text-gray-600">Freelance Digital Marketing Consultant</p>
-                            <p class="text-gray-600">Specializing in Facebook marketing, SEO optimization, and content strategy</p>
-                            <p class="text-gray-600">Helping businesses increase online visibility and drive conversions</p>
+                            <div class="timeline-date text-sm sm:text-base">2022 - Present</div>
+                            <h3 class="text-lg sm:text-xl font-semibold mb-2">Digital Marketing Specialist</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Freelance Digital Marketing Consultant</p>
+                            <p class="text-gray-600 text-sm sm:text-base">Specializing in Facebook marketing, SEO optimization, and content strategy</p>
+                            <p class="text-gray-600 text-sm sm:text-base">Helping businesses increase online visibility and drive conversions</p>
                         </div>
                     </div>
                 </div>
@@ -1257,145 +1355,145 @@
     </section>
     <!-- Services Section -->
     <section id="services" class="section bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">My Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Comprehensive cybersecurity and digital marketing solutions</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">Comprehensive cybersecurity and digital marketing solutions</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Ethical Hacking</h3>
-                    <p class="text-gray-600">Identify and fix security vulnerabilities in your systems before malicious actors can exploit them.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Ethical Hacking</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Identify and fix security vulnerabilities in your systems before malicious actors can exploit them.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Penetration Testing</h3>
-                    <p class="text-gray-600">Comprehensive security assessments to uncover weaknesses in your network, applications, and infrastructure.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Penetration Testing</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Comprehensive security assessments to uncover weaknesses in your network, applications, and infrastructure.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-bug"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Vulnerability Assessment</h3>
-                    <p class="text-gray-600">Systematic evaluation of security weaknesses in your information systems and provide actionable recommendations.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Vulnerability Assessment</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Systematic evaluation of security weaknesses in your information systems and provide actionable recommendations.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fab fa-facebook"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Facebook Marketing</h3>
-                    <p class="text-gray-600">Strategic Facebook ad campaigns to reach your target audience and maximize ROI on your marketing spend.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Facebook Marketing</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Strategic Facebook ad campaigns to reach your target audience and maximize ROI on your marketing spend.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-search-dollar"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">SEO Optimization</h3>
-                    <p class="text-gray-600">Improve your website's visibility on search engines and drive organic traffic to your business.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">SEO Optimization</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Improve your website's visibility on search engines and drive organic traffic to your business.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Digital Strategy</h3>
-                    <p class="text-gray-600">Comprehensive digital marketing strategies tailored to your business goals and target audience.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Digital Strategy</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Comprehensive digital marketing strategies tailored to your business goals and target audience.</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- Projects Section -->
     <section id="projects" class="section">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">Projects & Work Experience</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Highlighted projects and professional experience</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">Highlighted projects and professional experience</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Gin & Juice Shop</h3>
-                    <p class="text-gray-600 mb-2">E-commerce Platform (2022-2023)</p>
-                    <p class="text-gray-600">Conducted Vulnerability Assessment and Penetration Testing (VAPT) to identify and mitigate critical vulnerabilities, enhancing platform security.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Gin & Juice Shop</h3>
+                    <p class="text-gray-600 mb-2 text-sm sm:text-base">E-commerce Platform (2022-2023)</p>
+                    <p class="text-gray-600 text-sm sm:text-base">Conducted Vulnerability Assessment and Penetration Testing (VAPT) to identify and mitigate critical vulnerabilities, enhancing platform security.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-university"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">SecureBank Application</h3>
-                    <p class="text-gray-600 mb-2">Banking System (2023)</p>
-                    <p class="text-gray-600">Performed comprehensive penetration testing to uncover security flaws and provided actionable recommendations, reducing potential risks.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">SecureBank Application</h3>
+                    <p class="text-gray-600 mb-2 text-sm sm:text-base">Banking System (2023)</p>
+                    <p class="text-gray-600 text-sm sm:text-base">Performed comprehensive penetration testing to uncover security flaws and provided actionable recommendations, reducing potential risks.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">WebSec Tool Development</h3>
-                    <p class="text-gray-600 mb-2">Personal Project (2022)</p>
-                    <p class="text-gray-600">Built a custom vulnerability scanner for web applications, detecting SQL injection and XSS vulnerabilities. Available on GitHub.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">WebSec Tool Development</h3>
+                    <p class="text-gray-600 mb-2 text-sm sm:text-base">Personal Project (2022)</p>
+                    <p class="text-gray-600 text-sm sm:text-base">Built a custom vulnerability scanner for web applications, detecting SQL injection and XSS vulnerabilities. Available on GitHub.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-ad"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">E-commerce Facebook Campaign</h3>
-                    <p class="text-gray-600 mb-2">Digital Marketing (2023)</p>
-                    <p class="text-gray-600">Created and managed Facebook ad campaigns for an e-commerce client, resulting in a 180% increase in online sales and 3x ROI.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">E-commerce Facebook Campaign</h3>
+                    <p class="text-gray-600 mb-2 text-sm sm:text-base">Digital Marketing (2023)</p>
+                    <p class="text-gray-600 text-sm sm:text-base">Created and managed Facebook ad campaigns for an e-commerce client, resulting in a 180% increase in online sales and 3x ROI.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-search-dollar"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Local Business SEO</h3>
-                    <p class="text-gray-600 mb-2">SEO Optimization (2023)</p>
-                    <p class="text-gray-600">Implemented comprehensive SEO strategy for a local business, improving search rankings from page 5 to page 1 for key industry terms.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Local Business SEO</h3>
+                    <p class="text-gray-600 mb-2 text-sm sm:text-base">SEO Optimization (2023)</p>
+                    <p class="text-gray-600 text-sm sm:text-base">Implemented comprehensive SEO strategy for a local business, improving search rankings from page 5 to page 1 for key industry terms.</p>
                 </div>
                 
                 <div class="project-card fade-in">
                     <div class="project-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Restaurant Brand Awareness</h3>
-                    <p class="text-gray-600 mb-2">Social Media Marketing (2023)</p>
-                    <p class="text-gray-600">Developed and executed social media strategy for a new restaurant, increasing brand awareness by 75% and foot traffic by 60%.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">Restaurant Brand Awareness</h3>
+                    <p class="text-gray-600 mb-2 text-sm sm:text-base">Social Media Marketing (2023)</p>
+                    <p class="text-gray-600 text-sm sm:text-base">Developed and executed social media strategy for a new restaurant, increasing brand awareness by 75% and foot traffic by 60%.</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- Blog Section -->
     <section id="blog" class="section bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">Latest Blog Posts</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Insights on cybersecurity and digital marketing</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">Insights on cybersecurity and digital marketing</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <article class="blog-card fade-in">
                     <div class="blog-image">
                         <img src="https://picsum.photos/seed/cybersecurity-blog/600/400.jpg" alt="Cybersecurity blog post">
                     </div>
                     <div class="blog-content">
-                        <div class="blog-date">October 15, 2023</div>
-                        <h3 class="blog-title">Top 5 Cybersecurity Threats in 2023</h3>
-                        <p class="text-gray-600 mb-4">Learn about the most pressing cybersecurity threats facing businesses today and how to protect against them.</p>
+                        <div class="blog-date text-sm sm:text-base">October 15, 2023</div>
+                        <h3 class="blog-title text-lg sm:text-xl">Top 5 Cybersecurity Threats in 2023</h3>
+                        <p class="text-gray-600 mb-4 text-sm sm:text-base">Learn about the most pressing cybersecurity threats facing businesses today and how to protect against them.</p>
                         <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
@@ -1405,9 +1503,9 @@
                         <img src="https://picsum.photos/seed/facebook-marketing-blog/600/400.jpg" alt="Facebook marketing blog post">
                     </div>
                     <div class="blog-content">
-                        <div class="blog-date">September 28, 2023</div>
-                        <h3 class="blog-title">Maximizing ROI with Facebook Ads</h3>
-                        <p class="text-gray-600 mb-4">Strategies to optimize your Facebook ad campaigns for better performance and higher return on investment.</p>
+                        <div class="blog-date text-sm sm:text-base">September 28, 2023</div>
+                        <h3 class="blog-title text-lg sm:text-xl">Maximizing ROI with Facebook Ads</h3>
+                        <p class="text-gray-600 mb-4 text-sm sm:text-base">Strategies to optimize your Facebook ad campaigns for better performance and higher return on investment.</p>
                         <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
@@ -1417,73 +1515,73 @@
                         <img src="https://picsum.photos/seed/seo-blog/600/400.jpg" alt="SEO blog post">
                     </div>
                     <div class="blog-content">
-                        <div class="blog-date">September 10, 2023</div>
-                        <h3 class="blog-title">SEO Trends That Will Dominate 2024</h3>
-                        <p class="text-gray-600 mb-4">Stay ahead of the curve with these emerging SEO trends that will shape digital marketing in the coming year.</p>
+                        <div class="blog-date text-sm sm:text-base">September 10, 2023</div>
+                        <h3 class="blog-title text-lg sm:text-xl">SEO Trends That Will Dominate 2024</h3>
+                        <p class="text-gray-600 mb-4 text-sm sm:text-base">Stay ahead of the curve with these emerging SEO trends that will shape digital marketing in the coming year.</p>
                         <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
             
-            <div class="text-center mt-12">
+            <div class="text-center mt-10 md:mt-12">
                 <a href="#" class="btn-primary">View All Blog Posts</a>
             </div>
         </div>
     </section>
     <!-- Certifications Section -->
     <section id="certifications" class="section">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">Certifications</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Professional certifications and achievements</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">Professional certifications and achievements</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <div class="cert-card fade-in">
                     <div class="cert-header">Ethical Hacker</div>
                     <div class="cert-body">
-                        <h3 class="font-semibold mb-2">Creative IT Institute</h3>
-                        <p class="text-gray-600">Cyber Security</p>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">Creative IT Institute</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Cyber Security</p>
                     </div>
                 </div>
                 
                 <div class="cert-card fade-in">
                     <div class="cert-header">CISCO - Ethical Hacking</div>
                     <div class="cert-body">
-                        <h3 class="font-semibold mb-2">Cisco Networking Academy</h3>
-                        <p class="text-gray-600">Cyber Security</p>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">Cisco Networking Academy</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Cyber Security</p>
                     </div>
                 </div>
                 
                 <div class="cert-card fade-in">
                     <div class="cert-header">CISCO - Network Defense</div>
                     <div class="cert-body">
-                        <h3 class="font-semibold mb-2">Cisco Networking Academy</h3>
-                        <p class="text-gray-600">Cyber Security</p>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">Cisco Networking Academy</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Cyber Security</p>
                     </div>
                 </div>
                 
                 <div class="cert-card fade-in">
                     <div class="cert-header">CISCO - Cyber Security</div>
                     <div class="cert-body">
-                        <h3 class="font-semibold mb-2">Cisco Networking Academy</h3>
-                        <p class="text-gray-600">Cyber Security</p>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">Cisco Networking Academy</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Cyber Security</p>
                     </div>
                 </div>
                 
                 <div class="cert-card fade-in">
                     <div class="cert-header">Cyber Security</div>
                     <div class="cert-body">
-                        <h3 class="font-semibold mb-2">CREATIVE IT</h3>
-                        <p class="text-gray-600">Cyber Security</p>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">CREATIVE IT</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Cyber Security</p>
                     </div>
                 </div>
                 
                 <div class="cert-card fade-in">
                     <div class="cert-header">Penetration Testing</div>
                     <div class="cert-body">
-                        <h3 class="font-semibold mb-2">HTB</h3>
-                        <p class="text-gray-600">Cyber Security</p>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">HTB</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Cyber Security</p>
                     </div>
                 </div>
             </div>
@@ -1491,35 +1589,35 @@
     </section>
     <!-- Reference Section -->
     <section id="reference" class="section bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">Reference</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Professional reference</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">Professional reference</p>
             </div>
             
-            <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
-                <div class="flex items-center mb-6">
-                    <img src="https://picsum.photos/seed/reference/100/100.jpg" alt="Reference" class="w-16 h-16 rounded-full mr-4">
-                    <div>
+            <div class="max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+                <div class="flex flex-col sm:flex-row items-center mb-6">
+                    <img src="https://picsum.photos/seed/reference/100/100.jpg" alt="Reference" class="w-16 h-16 rounded-full mr-4 mb-4 sm:mb-0">
+                    <div class="text-center sm:text-left">
                         <h3 class="text-xl font-semibold">Mehedi Hasan</h3>
-                        <p class="text-gray-600">Assistant Deputy Manager</p>
-                        <p class="text-gray-600">Of Creative Business Group</p>
+                        <p class="text-gray-600 text-sm sm:text-base">Assistant Deputy Manager</p>
+                        <p class="text-gray-600 text-sm sm:text-base">Of Creative Business Group</p>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="flex items-center">
                         <div class="bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center mr-3">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <p class="text-gray-600">+8801711303697</p>
+                        <p class="text-gray-600 text-sm sm:text-base">+8801711303697</p>
                     </div>
                     
                     <div class="flex items-center">
                         <div class="bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center mr-3">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <p class="text-gray-600">mhb3097@gmail.com</p>
+                        <p class="text-gray-600 text-sm sm:text-base">mhb3097@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -1527,16 +1625,16 @@
     </section>
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
                 <h2 class="section-title gradient-text">Get In Touch</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Have a project in mind? Let's discuss how we can work together</p>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4 text-sm sm:text-base">Have a project in mind? Let's discuss how we can work together</p>
             </div>
             
-            <div class="flex flex-col lg:flex-row gap-12">
+            <div class="flex flex-col lg:flex-row gap-8 md:gap-12">
                 <div class="lg:w-1/2">
                     <form id="contact-form" class="contact-form">
-                        <h3 class="text-2xl font-semibold mb-6">Send Me a Message</h3>
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-6">Send Me a Message</h3>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
@@ -1560,8 +1658,8 @@
                 </div>
                 
                 <div class="lg:w-1/2">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg h-full">
-                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg h-full">
+                        <h3 class="text-xl sm:text-2xl font-semibold mb-6">Contact Information</h3>
                         
                         <div class="space-y-6 mb-8">
                             <div class="flex items-start">
@@ -1569,8 +1667,8 @@
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1">Location</h4>
-                                    <p class="text-gray-600">Savar, Dhaka, Bangladesh</p>
+                                    <h4 class="font-semibold mb-1 text-sm sm:text-base">Location</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">Savar, Dhaka, Bangladesh</p>
                                 </div>
                             </div>
                             
@@ -1579,8 +1677,8 @@
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1">Email</h4>
-                                    <p class="text-gray-600">m.babluislambiever@gmail.com</p>
+                                    <h4 class="font-semibold mb-1 text-sm sm:text-base">Email</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">m.babluislambiever@gmail.com</p>
                                 </div>
                             </div>
                             
@@ -1589,14 +1687,14 @@
                                     <i class="fas fa-phone"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-1">Phone</h4>
-                                    <p class="text-gray-600">+880 1624-224364</p>
+                                    <h4 class="font-semibold mb-1 text-sm sm:text-base">Phone</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">+880 1624-224364</p>
                                 </div>
                             </div>
                         </div>
                         
                         <div>
-                            <h4 class="font-semibold mb-4">Follow Me</h4>
+                            <h4 class="font-semibold mb-4 text-sm sm:text-base">Follow Me</h4>
                             <div class="flex space-x-4">
                                 <a href="#" class="social-icon">
                                     <i class="fab fa-facebook-f"></i>
@@ -1619,22 +1717,22 @@
     </section>
     <!-- Footer -->
     <footer>
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-4 sm:px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h2 class="text-2xl font-bold text-white mb-2">MD Khairul Islam Bablu</h2>
-                    <p class="text-blue-200">Ethical Hacker & Digital Marketing Specialist</p>
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">MD Khairul Islam Bablu</h2>
+                    <p class="text-blue-200 text-sm sm:text-base">Ethical Hacker & Digital Marketing Specialist</p>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#home" class="text-blue-200 hover:text-white transition">Home</a>
-                    <a href="#about" class="text-blue-200 hover:text-white transition">About</a>
-                    <a href="#services" class="text-blue-200 hover:text-white transition">Services</a>
-                    <a href="#projects" class="text-blue-200 hover:text-white transition">Projects</a>
-                    <a href="#contact" class="text-blue-200 hover:text-white transition">Contact</a>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                    <a href="#home" class="text-blue-200 hover:text-white transition text-sm sm:text-base">Home</a>
+                    <a href="#about" class="text-blue-200 hover:text-white transition text-sm sm:text-base">About</a>
+                    <a href="#services" class="text-blue-200 hover:text-white transition text-sm sm:text-base">Services</a>
+                    <a href="#projects" class="text-blue-200 hover:text-white transition text-sm sm:text-base">Projects</a>
+                    <a href="#contact" class="text-blue-200 hover:text-white transition text-sm sm:text-base">Contact</a>
                 </div>
             </div>
-            <div class="border-t border-blue-400 mt-8 pt-8 text-center text-blue-200">
-                <p>&copy; 2023 MD Khairul Islam Bablu. All rights reserved.</p>
+            <div class="border-t border-blue-400 mt-8 pt-8 text-center">
+                <p class="text-blue-200 text-sm sm:text-base">&copy; 2023 MD Khairul Islam Bablu. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1644,12 +1742,12 @@
     </div>
     <!-- Success Message Modal -->
     <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full mx-4 text-center">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl max-w-md w-full mx-4 text-center">
             <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i class="fas fa-check text-2xl"></i>
             </div>
             <h3 class="text-xl font-semibold mb-2">Message Sent Successfully!</h3>
-            <p class="text-gray-600 mb-6">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+            <p class="text-gray-600 mb-6 text-sm sm:text-base">Thank you for reaching out. I'll get back to you as soon as possible.</p>
             <button id="close-modal" class="btn-primary">Close</button>
         </div>
     </div>
@@ -1862,12 +1960,12 @@
             });
         });
         
-        // Hide loader when page is loaded - FIXED
+        // Hide loader when page is loaded
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.classList.add('hidden');
-            }, 2000); // Reduced time to 2 seconds
+            }, 2000);
         });
         
         // Enhanced Parallax effect
