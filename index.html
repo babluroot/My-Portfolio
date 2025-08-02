@@ -237,29 +237,29 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <a href="#home" class="text-xl font-bold text-green-glow">Bablu.</a>
-                <ul class="hidden md:flex space-x-6 text-sm">
-                    <li><a href="#profile" class="nav-link">Profile</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#certs" class="nav-link">Certs</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-green-glow text-2xl z-50">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300 px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <a href="#home" class="text-xl font-bold text-green-glow">Bablu.</a>
+            <ul class="hidden md:flex space-x-6 text-sm">
+                <li><a href="#profile" class="nav-link">Profile</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#soft-skills" class="nav-link">Soft Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certs" class="nav-link">Certs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-green-glow text-2xl z-50">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95">
             <ul class="flex flex-col items-center space-y-4 py-4">
                  <li><a href="#profile" class="nav-link text-lg">Profile</a></li>
                  <li><a href="#skills" class="nav-link text-lg">Skills</a></li>
+                 <li><a href="#soft-skills" class="nav-link text-lg">Soft Skills</a></li>
                  <li><a href="#projects" class="nav-link text-lg">Projects</a></li>
                  <li><a href="#experience" class="nav-link text-lg">Experience</a></li>
                  <li><a href="#certs" class="nav-link text-lg">Certs</a></li>
@@ -330,8 +330,8 @@
                         <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <p class="text-green-glow mb-2">$ ls -l /skills</p>
-                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">SKILLS</h2>
+                        <p class="text-green-glow mb-2">$ ls -l /skills/hard</p>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">TECHNICAL SKILLS</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm md:text-base">
                             <span class="flex items-center"><i class="fas fa-user-secret icon-glow w-6 text-center mr-2"></i>Ethical Hacking</span>
                             <span class="flex items-center"><i class="fas fa-bug-slash icon-glow w-6 text-center mr-2"></i>Penetration Testing</span>
@@ -340,12 +340,30 @@
                             <span class="flex items-center"><i class="fas fa-clipboard-check icon-glow w-6 text-center mr-2"></i>VAPT & Report Writing</span>
                             <span class="flex items-center"><i class="fas fa-search-plus icon-glow w-6 text-center mr-2"></i>Vulnerability Research</span>
                             <span class="flex items-center"><i class="fas fa-network-wired icon-glow w-6 text-center mr-2"></i>Computer Networking</span>
-                            <span class="flex items-center"><i class="fas fa-users icon-glow w-6 text-center mr-2"></i>Teamwork</span>
                         </div>
                     </div>
                 </div>
             </section>
             
+            <!-- Soft Skills Section -->
+            <section id="soft-skills" class="py-20 md:py-32">
+                <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
+                    <div class="terminal-header">
+                        <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-green-glow mb-2">$ ls -l /skills/soft</p>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">SOFT SKILLS</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm md:text-base">
+                            <span class="flex items-center"><i class="fas fa-comments icon-glow w-6 text-center mr-2"></i>Effective Communication</span>
+                            <span class="flex items-center"><i class="fas fa-users icon-glow w-6 text-center mr-2"></i>Teamwork</span>
+                            <span class="flex items-center"><i class="fas fa-lightbulb icon-glow w-6 text-center mr-2"></i>Problem Solving</span>
+                            <span class="flex items-center"><i class="fas fa-clock icon-glow w-6 text-center mr-2"></i>Time Management</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Work & Projects Section -->
             <section id="projects" class="py-20 md:py-32">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow animate-on-scroll slide-in-up">WORK & PROJECTS</h2>
