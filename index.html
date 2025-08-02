@@ -77,35 +77,20 @@
             transform: scale(1.1);
         }
 
-        /* Hero Section Video Background */
-        #hero-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -2;
+        /* Hero Section Image Background */
+        #home {
+            background-image: url('https://i.ibb.co/7J7bZ7r6/pexels-tima-miroshnichenko-5380594.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Creates a simple parallax effect */
         }
-        #hero-video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
-        .video-overlay {
+        #home .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(13, 17, 23, 0.85); /* Darker overlay */
-            z-index: -1;
         }
 
         /* Blinking cursor for the typing animation */
@@ -237,14 +222,7 @@
 
         <!-- Hero Section -->
         <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center relative">
-            <div id="hero-video-container">
-                <!-- Video path updated with a root-relative path for live servers -->
-                <video autoplay loop muted playsinline id="hero-video" poster="https://placehold.co/1920x1080/0d1117/0d1117?text=Loading...">
-                    <source src="/videos/hacker.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay"></div>
-            </div>
+            <div class="overlay"></div>
             <div class="w-full max-w-4xl z-10">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-green-glow mb-4">MD Khairul Islam Bablu</h1>
                 <p class="text-xl md:text-2xl lg:text-3xl font-light">
