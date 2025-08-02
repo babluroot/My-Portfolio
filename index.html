@@ -228,6 +228,24 @@
             opacity: 1;
             transform: translateX(0) translateY(0);
         }
+        
+        /* Download Button Style */
+        .download-btn {
+            display: inline-block;
+            background-color: #39ff14;
+            color: #0d1117;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #39ff1480;
+        }
+        .download-btn:hover {
+            background-color: #c9d1d9;
+            color: #0d1117;
+            box-shadow: 0 0 20px #39ff14;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -255,6 +273,7 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#certs" class="nav-link">Certs</a></li>
+                <li><a href="#cv" class="nav-link">CV</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <!-- Mobile Menu Button -->
@@ -271,6 +290,7 @@
                  <li><a href="#projects" class="nav-link text-lg">Projects</a></li>
                  <li><a href="#experience" class="nav-link text-lg">Experience</a></li>
                  <li><a href="#certs" class="nav-link text-lg">Certs</a></li>
+                 <li><a href="#cv" class="nav-link text-lg">CV</a></li>
                  <li><a href="#contact" class="nav-link text-lg">Contact</a></li>
             </ul>
         </div>
@@ -465,6 +485,20 @@
                         </ul>
                     </div>
                 </div>
+            </section>
+            
+            <!-- CV Download Section -->
+            <section id="cv" class="py-20 md:py-32">
+                <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up text-center">
+                   <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                   <div class="p-6 md:p-8">
+                       <h2 class="text-3xl md:text-4xl font-bold mb-4 text-green-glow">GET MY CV</h2>
+                       <p class="max-w-2xl mx-auto mb-10">Interested in my full profile? Download the latest version of my CV.</p>
+                       <a href="https://github.com/babluroot/My-Portfolio/raw/main/My%20CV/MD_Khairul_Islam_Bablu_CV.pdf" class="download-btn" download>
+                           Download CV <i class="fas fa-download ml-2"></i>
+                       </a>
+                   </div>
+               </div>
             </section>
 
 
