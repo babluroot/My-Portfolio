@@ -79,10 +79,11 @@
 
         /* Hero Section Image Background */
         #home {
+            position: relative;
             background-image: url('https://i.ibb.co/7J7bZ7r6/pexels-tima-miroshnichenko-5380594.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Creates a simple parallax effect */
+            background-attachment: fixed;
         }
         #home .overlay {
             position: absolute;
@@ -91,6 +92,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(13, 17, 23, 0.85); /* Darker overlay */
+            z-index: 0;
         }
 
         /* Blinking cursor for the typing animation */
@@ -167,23 +169,30 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #2aa810;
         }
-
-        /* Animated Parallax background effect */
-        .parallax-bg {
-            position: fixed;
-            top: 0;
+        
+        /* Navigation Bar */
+        .nav-link {
+            color: #c9d1d9;
+            transition: color 0.3s, text-shadow 0.3s;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-link:hover {
+            color: #39ff14;
+            text-shadow: 0 0 5px #39ff14;
+        }
+        .nav-link.active {
+            color: #39ff14;
+            text-shadow: 0 0 5px #39ff14;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: -3; /* Behind video overlay */
-            background-image: radial-gradient(#161b22 1.5px, transparent 1.5px);
-            background-size: 25px 25px;
-            opacity: 0.2;
-            animation: move-grid 20s linear infinite;
-        }
-        @keyframes move-grid {
-            from { background-position: 0 0; }
-            to { background-position: 50px 50px; }
+            height: 2px;
+            background-color: #39ff14;
         }
 
         /* Animation classes for scroll effects */
@@ -215,15 +224,42 @@
         </div>
     </div>
 
-    <div class="parallax-bg"></div>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16 flex justify-between items-center py-4">
+            <a href="#home" class="text-xl font-bold text-green-glow">Bablu.</a>
+            <ul class="hidden md:flex space-x-6 text-sm">
+                <li><a href="#profile" class="nav-link">Profile</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certs" class="nav-link">Certs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-green-glow text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                 <li><a href="#profile" class="nav-link text-lg">Profile</a></li>
+                 <li><a href="#skills" class="nav-link text-lg">Skills</a></li>
+                 <li><a href="#projects" class="nav-link text-lg">Projects</a></li>
+                 <li><a href="#experience" class="nav-link text-lg">Experience</a></li>
+                 <li><a href="#certs" class="nav-link text-lg">Certs</a></li>
+                 <li><a href="#contact" class="nav-link text-lg">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Main Container -->
-    <div class="container mx-auto px-4 md:px-8 lg:px-16 relative">
-
+    <main class="relative">
         <!-- Hero Section -->
-        <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center relative">
+        <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
             <div class="overlay"></div>
-            <div class="w-full max-w-4xl z-10">
+            <div class="w-full max-w-4xl z-10 px-4">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-green-glow mb-4">MD Khairul Islam Bablu</h1>
                 <p class="text-xl md:text-2xl lg:text-3xl font-light">
                     <span id="typing-effect"></span>
@@ -238,178 +274,179 @@
             </div>
         </header>
 
-        <!-- Profile Section -->
-        <section id="profile" class="py-20 md:py-32">
-            <div class="terminal-window max-w-5xl mx-auto animate-on-scroll slide-in-up">
-                <div class="terminal-header">
-                    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                </div>
-                <div class="p-6 md:p-8">
-                    <p class="text-green-glow mb-4">$ cat ./profile.txt</p>
-                    <div class="flex flex-col md:flex-row items-center gap-8">
-                        <!-- Profile Picture -->
-                        <div class="flex-shrink-0 mb-6 md:mb-0">
-                            <!-- Image updated with your link -->
-                            <img src="https://i.ibb.co/Y4DPwn22/download-4-1.png" 
-                                 alt="MD Khairul Islam Bablu" 
-                                 class="profile-picture w-40 h-40 md:w-48 md:h-48">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16">
+            <!-- Profile Section -->
+            <section id="profile" class="py-20 md:py-32">
+                <div class="terminal-window max-w-5xl mx-auto animate-on-scroll slide-in-up">
+                    <div class="terminal-header">
+                        <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-green-glow mb-4">$ cat ./profile.txt</p>
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <!-- Profile Picture -->
+                            <div class="flex-shrink-0 mb-6 md:mb-0">
+                                <!-- Image updated with your link -->
+                                <img src="https://i.ibb.co/Y4DPwn22/download-4-1.png" 
+                                     alt="MD Khairul Islam Bablu" 
+                                     class="profile-picture w-40 h-40 md:w-48 md:h-48">
+                            </div>
+                            <!-- Profile Text -->
+                            <div>
+                                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-green-glow">PROFILE</h2>
+                                <p class="text-base md:text-lg leading-relaxed">
+                                    Ethical hacker, pentester, and red teamer with over 2 years of hands-on experience. Proven ability to implement security measures that prevent breaches, significantly enhancing system protection. As a professional digital marketer and Facebook Ads expert, I excel at tracking business website performance, precisely targeting audiences, and scaling sales to grow your business. Passionate about maintaining the highest ethical standards and ensuring data security in today’s complex digital landscape.
+                                </p>
+                            </div>
                         </div>
-                        <!-- Profile Text -->
-                        <div>
-                            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-green-glow">PROFILE</h2>
-                            <p class="text-base md:text-lg leading-relaxed">
-                                Ethical hacker, pentester, and red teamer with over 2 years of hands-on experience. Proven ability to implement security measures that prevent breaches, significantly enhancing system protection. As a professional digital marketer and Facebook Ads expert, I excel at tracking business website performance, precisely targeting audiences, and scaling sales to grow your business. Passionate about maintaining the highest ethical standards and ensuring data security in today’s complex digital landscape.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="py-20 md:py-32">
+                <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
+                    <div class="terminal-header">
+                        <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-green-glow mb-2">$ ls -l /skills</p>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">SKILLS</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm md:text-base">
+                            <span class="flex items-center"><i class="fas fa-user-secret icon-glow w-6 text-center mr-2"></i>Ethical Hacking</span>
+                            <span class="flex items-center"><i class="fas fa-bug-slash icon-glow w-6 text-center mr-2"></i>Penetration Testing</span>
+                            <span class="flex items-center"><i class="fas fa-chart-line icon-glow w-6 text-center mr-2"></i>Digital Marketing</span>
+                            <span class="flex items-center"><i class="fab fa-facebook icon-glow w-6 text-center mr-2"></i>Facebook Ads Expert</span>
+                            <span class="flex items-center"><i class="fas fa-clipboard-check icon-glow w-6 text-center mr-2"></i>VAPT & Report Writing</span>
+                            <span class="flex items-center"><i class="fas fa-search-plus icon-glow w-6 text-center mr-2"></i>Vulnerability Research</span>
+                            <span class="flex items-center"><i class="fas fa-network-wired icon-glow w-6 text-center mr-2"></i>Computer Networking</span>
+                            <span class="flex items-center"><i class="fas fa-users icon-glow w-6 text-center mr-2"></i>Teamwork</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Work & Projects Section -->
+            <section id="projects" class="py-20 md:py-32">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow animate-on-scroll slide-in-up">WORK & PROJECTS</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="terminal-window animate-on-scroll slide-in-left">
+                        <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Gin & Juice Shop</h3>
+                            <p class="text-green-glow text-sm mb-3">E-commerce Platform (2022-2023)</p>
+                            <p>Conducted VAPT to identify and mitigate critical vulnerabilities, enhancing platform security.</p>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="terminal-window animate-on-scroll slide-in-up">
+                        <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">SecureBank Application</h3>
+                            <p class="text-green-glow text-sm mb-3">Banking System (2023)</p>
+                            <p>Performed comprehensive penetration testing to uncover security flaws and provided actionable recommendations.</p>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="terminal-window animate-on-scroll slide-in-right">
+                        <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">WebSec Tool Dev</h3>
+                            <p class="text-green-glow text-sm mb-3">Personal Project (2022)</p>
+                            <p>Built a custom vulnerability scanner for web apps to detect SQLi and XSS.
+                               <a href="https://github.com/bablu-islam" target="_blank" class="text-blue-400 hover:underline block mt-2">View on GitHub</a>
                             </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-32">
-            <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
-                <div class="terminal-header">
-                    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                </div>
-                <div class="p-6 md:p-8">
-                    <p class="text-green-glow mb-2">$ ls -l /skills</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">SKILLS</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm md:text-base">
-                        <span class="flex items-center"><i class="fas fa-user-secret icon-glow w-6 text-center mr-2"></i>Ethical Hacking</span>
-                        <span class="flex items-center"><i class="fas fa-bug-slash icon-glow w-6 text-center mr-2"></i>Penetration Testing</span>
-                        <span class="flex items-center"><i class="fas fa-chart-line icon-glow w-6 text-center mr-2"></i>Digital Marketing</span>
-                        <span class="flex items-center"><i class="fab fa-facebook icon-glow w-6 text-center mr-2"></i>Facebook Ads Expert</span>
-                        <span class="flex items-center"><i class="fas fa-clipboard-check icon-glow w-6 text-center mr-2"></i>VAPT & Report Writing</span>
-                        <span class="flex items-center"><i class="fas fa-search-plus icon-glow w-6 text-center mr-2"></i>Vulnerability Research</span>
-                        <span class="flex items-center"><i class="fas fa-network-wired icon-glow w-6 text-center mr-2"></i>Computer Networking</span>
-                        <span class="flex items-center"><i class="fas fa-users icon-glow w-6 text-center mr-2"></i>Teamwork</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Work & Projects Section -->
-        <section id="projects" class="py-20 md:py-32">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow animate-on-scroll slide-in-up">WORK & PROJECTS</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="terminal-window animate-on-scroll slide-in-left">
-                    <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Gin & Juice Shop</h3>
-                        <p class="text-green-glow text-sm mb-3">E-commerce Platform (2022-2023)</p>
-                        <p>Conducted VAPT to identify and mitigate critical vulnerabilities, enhancing platform security.</p>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="terminal-window animate-on-scroll slide-in-up">
-                    <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">SecureBank Application</h3>
-                        <p class="text-green-glow text-sm mb-3">Banking System (2023)</p>
-                        <p>Performed comprehensive penetration testing to uncover security flaws and provided actionable recommendations.</p>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="terminal-window animate-on-scroll slide-in-right">
-                    <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">WebSec Tool Dev</h3>
-                        <p class="text-green-glow text-sm mb-3">Personal Project (2022)</p>
-                        <p>Built a custom vulnerability scanner for web apps to detect SQLi and XSS.
-                           <a href="https://github.com/bablu-islam" target="_blank" class="text-blue-400 hover:underline block mt-2">View on GitHub</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience & Education Section -->
-        <section id="experience" class="py-20 md:py-32">
-            <!-- This grid will be 1 column on mobile and 2 on large screens -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
-                <!-- Professional Training -->
-                <div class="w-full animate-on-scroll slide-in-left">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">PROFESSIONAL TRAINING</h2>
-                    <div class="space-y-8">
-                        <div class="terminal-window">
-                           <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                           <div class="p-6">
-                                <h3 class="text-xl font-bold">Cisco Networking Academy</h3>
-                                <p class="text-green-glow text-sm mb-2">Ethical Hacker (2023-2024)</p>
-                                <p>Advanced training in Ethical Hacking, Penetration Testing, and Network Security with Cisco.</p>
-                           </div>
+            <!-- Experience & Education Section -->
+            <section id="experience" class="py-20 md:py-32">
+                <!-- This grid will be 1 column on mobile and 2 on large screens -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+                    <!-- Professional Training -->
+                    <div class="w-full animate-on-scroll slide-in-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">PROFESSIONAL TRAINING</h2>
+                        <div class="space-y-8">
+                            <div class="terminal-window">
+                               <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                               <div class="p-6">
+                                    <h3 class="text-xl font-bold">Cisco Networking Academy</h3>
+                                    <p class="text-green-glow text-sm mb-2">Ethical Hacker (2023-2024)</p>
+                                    <p>Advanced training in Ethical Hacking, Penetration Testing, and Network Security with Cisco.</p>
+                               </div>
+                            </div>
+                            <div class="terminal-window">
+                               <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                               <div class="p-6">
+                                    <h3 class="text-xl font-bold">Creative IT Institute</h3>
+                                    <p class="text-green-glow text-sm mb-2">Cyber Security (2022-2023)</p>
+                                    <p>Hands-on experience with Nmap, Metasploit, Burp Suite. Specialized in network hacking.</p>
+                               </div>
+                            </div>
                         </div>
-                        <div class="terminal-window">
-                           <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                           <div class="p-6">
-                                <h3 class="text-xl font-bold">Creative IT Institute</h3>
-                                <p class="text-green-glow text-sm mb-2">Cyber Security (2022-2023)</p>
-                                <p>Hands-on experience with Nmap, Metasploit, Burp Suite. Specialized in network hacking.</p>
-                           </div>
+                    </div>
+                    <!-- Education -->
+                    <div class="w-full animate-on-scroll slide-in-right">
+                        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">EDUCATION</h2>
+                         <div class="terminal-window">
+                               <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                               <div class="p-6">
+                                    <h3 class="text-xl font-bold">GREEN VIEW HIGH SCHOOL</h3>
+                                    <p class="text-green-glow text-sm mb-2">Department of Science (2011-2022)</p>
+                                    <p>Achieved a GPA of 3.8 out of 5.0.</p>
+                               </div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Certifications -->
+            <section id="certs" class="py-20 md:py-32">
+                <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
+                    <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <div class="p-6 md:p-8">
+                        <p class="text-green-glow mb-2">$ grep -r "CERTIFIED" /var/log/auth.log</p>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">CERTIFICATIONS</h2>
+                        <ul class="list-none space-y-2">
+                            <li><span class="text-green-glow">[+]</span> CISCO - Ethical Hacking</li>
+                            <li><span class="text-green-glow">[+]</span> CISCO - Network Defense</li>
+                            <li><span class="text-green-glow">[+]</span> CISCO - Cyber Security</li>
+                            <li><span class="text-green-glow">[+]</span> Cyber Security - CREATIVE IT</li>
+                            <li><span class="text-green-glow">[+]</span> Penetration Testing - HTB</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20 md:py-32">
+                 <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
+                    <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <div class="p-6 md:p-8 text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-green-glow">INITIATE CONTACT</h2>
+                        <p class="max-w-2xl mx-auto mb-10">Have a project, a question, or just want to connect? Send a signal.</p>
+                        <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                            <a href="mailto:m.babluislambiever@gmail.com" class="icon-glow text-4xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/8801624224364" target="_blank" class="icon-glow text-4xl" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://github.com/babluroot" target="_blank" class="icon-glow text-4xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <!-- Links updated with your profiles -->
+                            <a href="https://www.facebook.com/babluislambieverofficial" target="_blank" class="icon-glow text-4xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://x.com/BabluislamB?t=BoTY8hfrFqozTKgM7Ozqhg&s=08" target="_blank" class="icon-glow text-4xl" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- Education -->
-                <div class="w-full animate-on-scroll slide-in-right">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">EDUCATION</h2>
-                     <div class="terminal-window">
-                           <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                           <div class="p-6">
-                                <h3 class="text-xl font-bold">GREEN VIEW HIGH SCHOOL</h3>
-                                <p class="text-green-glow text-sm mb-2">Department of Science (2011-2022)</p>
-                                <p>Achieved a GPA of 3.8 out of 5.0.</p>
-                           </div>
-                        </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Certifications -->
-        <section id="certs" class="py-20 md:py-32">
-            <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
-                <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                <div class="p-6 md:p-8">
-                    <p class="text-green-glow mb-2">$ grep -r "CERTIFIED" /var/log/auth.log</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">CERTIFICATIONS</h2>
-                    <ul class="list-none space-y-2">
-                        <li><span class="text-green-glow">[+]</span> CISCO - Ethical Hacking</li>
-                        <li><span class="text-green-glow">[+]</span> CISCO - Network Defense</li>
-                        <li><span class="text-green-glow">[+]</span> CISCO - Cyber Security</li>
-                        <li><span class="text-green-glow">[+]</span> Cyber Security - CREATIVE IT</li>
-                        <li><span class="text-green-glow">[+]</span> Penetration Testing - HTB</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            </section>
 
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-32">
-             <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
-                <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                <div class="p-6 md:p-8 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-green-glow">INITIATE CONTACT</h2>
-                    <p class="max-w-2xl mx-auto mb-10">Have a project, a question, or just want to connect? Send a signal.</p>
-                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-                        <a href="mailto:m.babluislambiever@gmail.com" class="icon-glow text-4xl" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://wa.me/8801624224364" target="_blank" class="icon-glow text-4xl" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://github.com/babluroot" target="_blank" class="icon-glow text-4xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <!-- Links updated with your profiles -->
-                        <a href="https://www.facebook.com/babluislambieverofficial" target="_blank" class="icon-glow text-4xl" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://x.com/BabluislamB?t=BoTY8hfrFqozTKgM7Ozqhg&s=08" target="_blank" class="icon-glow text-4xl" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="text-center py-8 border-t border-gray-800">
-            <p class="text-sm">&copy; 2024 MD Khairul Islam Bablu. All systems operational.</p>
-        </footer>
-
-    </div>
+            <!-- Footer -->
+            <footer class="text-center py-8 border-t border-gray-800">
+                <p class="text-sm">&copy; 2024 MD Khairul Islam Bablu. All systems operational.</p>
+            </footer>
+        </div>
+    </main>
 
     <!-- Typed.js for the typing animation -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -446,7 +483,7 @@
             // Scroll Animations
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
-            const observer = new IntersectionObserver((entries) => {
+            const scrollObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
@@ -457,11 +494,55 @@
             });
 
             animatedElements.forEach(el => {
-                observer.observe(el);
+                scrollObserver.observe(el);
+            });
+            
+            // Navbar Logic
+            const navbar = document.getElementById('navbar');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+                } else {
+                    navbar.classList.remove('bg-black', 'bg-opacity-80', 'backdrop-blur-sm');
+                }
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Active nav link on scroll
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+
+            sections.forEach(section => {
+                navObserver.observe(section);
             });
         });
     </script>
 
 </body>
 </html>
-
