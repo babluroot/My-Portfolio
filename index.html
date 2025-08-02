@@ -261,7 +261,7 @@
         </header>
 
         <!-- Profile Section -->
-        <section id="profile" class="py-20 md:py-32 parallax-section" data-parallax-speed="0.1">
+        <section id="profile" class="py-20 md:py-32">
             <div class="terminal-window max-w-5xl mx-auto animate-on-scroll slide-in-up">
                 <div class="terminal-header">
                     <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
@@ -278,7 +278,7 @@
                         </div>
                         <!-- Profile Text -->
                         <div>
-                            <h2 class="text-2xl md:text-3xl font-bold mb-4">PROFILE</h2>
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-green-glow">PROFILE</h2>
                             <p class="text-base md:text-lg leading-relaxed">
                                 Ethical hacker, pentester, and red teamer with over 2 years of hands-on experience. Proven ability to implement security measures that prevent breaches, significantly enhancing system protection. As a professional digital marketer and Facebook Ads expert, I excel at tracking business website performance, precisely targeting audiences, and scaling sales to grow your business. Passionate about maintaining the highest ethical standards and ensuring data security in today’s complex digital landscape.
                             </p>
@@ -289,14 +289,14 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-32 parallax-section" data-parallax-speed="0.15">
+        <section id="skills" class="py-20 md:py-32">
             <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
                 <div class="terminal-header">
                     <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
                 </div>
                 <div class="p-6 md:p-8">
                     <p class="text-green-glow mb-2">$ ls -l /skills</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-6">SKILLS</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">SKILLS</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 text-sm md:text-base">
                         <span class="flex items-center"><i class="fas fa-user-secret icon-glow w-6 text-center mr-2"></i>Ethical Hacking</span>
                         <span class="flex items-center"><i class="fas fa-bug-slash icon-glow w-6 text-center mr-2"></i>Penetration Testing</span>
@@ -349,7 +349,8 @@
 
         <!-- Experience & Education Section -->
         <section id="experience" class="py-20 md:py-32">
-            <div class="grid lg:grid-cols-2 gap-12">
+            <!-- This grid will be 1 column on mobile and 2 on large screens -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
                 <!-- Professional Training -->
                 <div class="w-full animate-on-scroll slide-in-left">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-glow">PROFESSIONAL TRAINING</h2>
@@ -385,12 +386,12 @@
         </section>
         
         <!-- Certifications -->
-        <section id="certs" class="py-20 md:py-32 parallax-section" data-parallax-speed="0.1">
+        <section id="certs" class="py-20 md:py-32">
             <div class="terminal-window max-w-4xl mx-auto animate-on-scroll slide-in-up">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="p-6 md:p-8">
                     <p class="text-green-glow mb-2">$ grep -r "CERTIFIED" /var/log/auth.log</p>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-6">CERTIFICATIONS</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-green-glow">CERTIFICATIONS</h2>
                     <ul class="list-none space-y-2">
                         <li><span class="text-green-glow">[+]</span> CISCO - Ethical Hacking</li>
                         <li><span class="text-green-glow">[+]</span> CISCO - Network Defense</li>
@@ -410,10 +411,10 @@
             <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                 <a href="mailto:m.babluislambiever@gmail.com" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 200ms;" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://wa.me/8801624224364" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 300ms;" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://github.com/bablu-islam" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 400ms;" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/babluroot" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 400ms;" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <!-- IMPORTANT: Add your actual profile links here -->
-                <a href="#" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 500ms;" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank" class="icon-glow text-4xl animate-on-scroll slide-in-up" style="transition-delay: 600ms;" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" target="_blank" class="https://www.facebook.com/babluislambieverofficial" style="transition-delay: 500ms;" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" class="https://x.com/BabluislamB?t=BoTY8hfrFqozTKgM7Ozqhg&s=08" style="transition-delay: 600ms;" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
             </div>
         </section>
 
@@ -456,8 +457,7 @@
             };
             var typed = new Typed('#typing-effect', typedOptions);
 
-            // Enhanced Parallax & Scroll Animations
-            const parallaxElements = document.querySelectorAll('.parallax-section');
+            // Scroll Animations
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
             const observer = new IntersectionObserver((entries) => {
@@ -472,14 +472,6 @@
 
             animatedElements.forEach(el => {
                 observer.observe(el);
-            });
-
-            window.addEventListener('scroll', function() {
-                let offset = window.pageYOffset;
-                parallaxElements.forEach(el => {
-                    let speed = parseFloat(el.dataset.parallaxSpeed) || 0.1;
-                    el.style.transform = 'translateY(' + offset * -speed + 'px)';
-                });
             });
         });
     </script>
