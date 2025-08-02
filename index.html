@@ -77,13 +77,25 @@
             transform: scale(1.1);
         }
 
-        /* Hero Section Image Background */
-        #home {
-            position: relative;
-            background-image: url('https://i.ibb.co/7J7bZ7r6/pexels-tima-miroshnichenko-5380594.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        /* Hero Section Video Background */
+        #hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 56.25vw; /* 16:9 Aspect Ratio */
+            min-height: 100vh;
+            min-width: 177.77vh; /* 16:9 Aspect Ratio for vertical screens */
         }
         #home .overlay {
             position: absolute;
@@ -226,7 +238,7 @@
 
     <!-- Navigation Bar -->
     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
-        <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <a href="#home" class="text-xl font-bold text-green-glow">Bablu.</a>
                 <ul class="hidden md:flex space-x-6 text-sm">
@@ -238,7 +250,7 @@
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-green-glow text-2xl">
+                <button id="mobile-menu-button" class="md:hidden text-green-glow text-2xl z-50">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -259,7 +271,13 @@
     <!-- Main Container -->
     <main class="relative">
         <!-- Hero Section -->
-        <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
+        <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center relative">
+            <div id="hero-video-container">
+                <video id="hero-video" autoplay loop muted playsinline poster="https://i.ibb.co/7J7bZ7r6/pexels-tima-miroshnichenko-5380594.jpg">
+                    <source src="https://raw.githubusercontent.com/babluroot/My-Portfolio/main/vidoes/hacker.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div class="overlay"></div>
             <div class="w-full max-w-4xl z-10 px-4">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-green-glow mb-4">MD Khairul Islam Bablu</h1>
